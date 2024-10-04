@@ -5,9 +5,11 @@
     "libs/*"
   ],
   "scripts": {},
-  "dependencies": {},
   "devDependencies": {
+    "@nestjs/schematics": "^10.0.1",
     "@nx/js": "19.8.3",
+    "@nx/nest": "^19.8.3",
     "nx": "19.8.3"
-  }
+  },
+  "dependencies": {}
 }
