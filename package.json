@@ -1,15 +1,13 @@
 {
   "name": "trymodules-mdl-settings",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
   "private": true,
+  "workspaces": [
+    "libs/*"
+  ],
+  "scripts": {},
   "dependencies": {},
   "devDependencies": {
     "@nx/js": "19.8.3",
     "nx": "19.8.3"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }
