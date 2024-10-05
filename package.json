@@ -2,7 +2,7 @@
   "name": "trymodules-mdl-settings",
   "private": true,
   "workspaces": [
-    "libs/*"
+    "dist/libs/*"
   ],
   "scripts": {},
   "devDependencies": {
@@ -17,6 +17,7 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/jest": "^29.5.12",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "18.16.9",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
@@ -30,5 +31,7 @@
     "typescript": "~5.5.2",
     "typescript-eslint": "^8.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }
