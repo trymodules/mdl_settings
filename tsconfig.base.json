@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "#libs/settings": ["libs/settings/src/index.ts"]
+      "#libs/settings": ["libs/settings/src/index.ts"],
+      "format-json": ["libs/format-json/src/index.ts"],
+      "format-yaml": ["libs/format-yaml/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

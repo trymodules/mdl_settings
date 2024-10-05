@@ -1,0 +1,21 @@
+{
+  "name": "libs/format-yaml",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/format-yaml/src",
+  "projectType": "library",
+  "tags": [
+    "format"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/format-yaml",
+        "main": "libs/format-yaml/src/index.ts",
+        "tsConfig": "libs/format-yaml/tsconfig.lib.json",
+        "assets": ["libs/format-yaml/*.md"]
+      }
+    }
+  }
+}
