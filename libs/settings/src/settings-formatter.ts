@@ -1,4 +1,4 @@
-export interface Formatter {
+export interface SettingsFormatter {
   /**
    * Serialize the data to a string
    * @param data The data to serialize
