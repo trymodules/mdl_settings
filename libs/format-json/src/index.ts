@@ -1,1 +1,1 @@
-export * from './json-formatter';
+export * from './format-json';

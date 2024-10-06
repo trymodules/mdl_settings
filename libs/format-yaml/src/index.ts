@@ -1,1 +1,1 @@
-export * from './yaml-formatter';
+export * from './format-yaml';
