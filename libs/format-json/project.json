@@ -1,9 +1,11 @@
 {
-  "name": "format-json",
+  "name": "libs/format-json",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/format-json/src",
   "projectType": "library",
-  "tags": [],
+  "tags": [
+    "format"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
