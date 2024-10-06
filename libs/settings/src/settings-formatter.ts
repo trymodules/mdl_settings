@@ -1,5 +1,10 @@
 export interface SettingsFormatter {
   /**
+   * The name of the formatter
+   */
+  readonly NAME: Symbol;
+
+  /**
    * Serialize the data to a string
    * @param data The data to serialize
    */

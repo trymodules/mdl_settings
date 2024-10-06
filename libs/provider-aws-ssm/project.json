@@ -1,0 +1,21 @@
+{
+  "name": "libs/provider-aws-ssm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/provider-aws-ssm/src",
+  "projectType": "library",
+  "tags": [
+    "provider"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/provider-aws-ssm",
+        "main": "libs/provider-aws-ssm/src/index.ts",
+        "tsConfig": "libs/provider-aws-ssm/tsconfig.lib.json",
+        "assets": ["libs/provider-aws-ssm/*.md"]
+      }
+    }
+  }
+}

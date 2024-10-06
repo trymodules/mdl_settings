@@ -1,0 +1,13 @@
+{
+  "name": "@trymodules/settings-provider-aws-ssm",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "peerDependencies": {
+    "@aws-sdk/client-ssm": "^3.0.0",
+    "@trymodules/settings": "^1.0.0",
+    "tslib": "^2.3.0",
+    "type-fest": "^4.0.0"
+  }
+}

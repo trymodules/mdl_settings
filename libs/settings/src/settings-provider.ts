@@ -1,37 +1,50 @@
 export interface SharedSettingsParams {
   /**
-   * The namespace of the settings to load/save (follow app_name.module_name)
-   * e.g. my_awesome_app.my_module
+   * The namespace of the settings to load/save.
+   * Suggestion: follow app_name/env_name/module_name format. e.g. my_awesome_app/prod/my_module
    */
   namespace: string;
 }
 
-export interface LoadSettingsParams<TConfig = unknown>
+export interface LoadSettingsParams<TSettings = unknown>
   extends SharedSettingsParams {
   /**
    * The default settings to use if none are found
    */
-  default?: TConfig;
+  defaultVal?: TSettings;
 }
 
-export interface SaveSettingsParams<TConfig = unknown>
+export interface SaveSettingsParams<TSettings = unknown>
   extends SharedSettingsParams {
   /**
    * The settings to save
    */
-  config: TConfig;
+  settings: TSettings;
 }
 
-export interface SettingsProvider<TConfig = unknown> {
+export interface DeleteSettingsParams extends SharedSettingsParams {}
+
+export interface SettingsProvider<TSettings = unknown> {
+  /**
+   * The name of the provider
+   */
+  readonly NAME: Symbol;
+
   /**
    * Load settings from the storage
    * @param params The parameters to load the settings
    */
-  load(params: LoadSettingsParams<TConfig>): Promise<TConfig>;
+  load(params: LoadSettingsParams<TSettings>): Promise<TSettings | undefined>;
 
   /**
    * Save settings to the storage
    * @param params The parameters to save the settings
    */
-  save(params: SaveSettingsParams<TConfig>): Promise<void>;
+  save(params: SaveSettingsParams<TSettings>): Promise<void>;
+
+  /**
+   * Delete settings from the storage
+   * @param params The parameters to delete the settings
+   */
+  delete(params: SharedSettingsParams): Promise<void>;
 }
