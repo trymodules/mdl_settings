@@ -16,8 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "#libs/settings": ["libs/settings/src/index.ts"],
-      "format-json": ["libs/format-json/src/index.ts"],
-      "format-yaml": ["libs/format-yaml/src/index.ts"]
+      "#libs/format-json": ["libs/format-json/src/index.ts"],
+      "#libs/format-yaml": ["libs/format-yaml/src/index.ts"],
+      "#libs/provider-aws-ssm": ["libs/provider-aws-ssm/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
