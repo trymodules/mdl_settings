@@ -19,6 +19,7 @@
       "#libs/format-yaml": ["libs/format-yaml/src/index.ts"],
       "#libs/provider-aws-ssm": ["libs/provider-aws-ssm/src/index.ts"],
       "#libs/settings": ["libs/settings/src/index.ts"],
+      "provider-typeorm": ["libs/provider-typeorm/src/index.ts"],
       "#libs/provider-local-file": ["libs/provider-local-file/src/index.ts"]
     }
   },
