@@ -5,6 +5,7 @@
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
   "peerDependencies": {
+    "@trymodules/settings": "^1.0.0",
     "js-yaml": "^4.1.0",
     "tslib": "^2.3.0"
   }
