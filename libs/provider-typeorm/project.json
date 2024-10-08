@@ -1,5 +1,5 @@
 {
-  "name": "provider-typeorm",
+  "name": "libs/provider-typeorm",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/provider-typeorm/src",
   "projectType": "library",
