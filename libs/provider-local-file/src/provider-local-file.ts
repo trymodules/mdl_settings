@@ -31,7 +31,7 @@ export interface LocalFileSettingsProviderOptions {
 export class LocalFileSettingsProvider<TSettings = unknown>
   implements SettingsProvider<TSettings>
 {
-  readonly NAME = Symbol('local-file');
+  readonly NAME = Symbol('provider-local-file');
 
   constructor(protected readonly opts: LocalFileSettingsProviderOptions) {}
 
@@ -47,13 +47,13 @@ export class LocalFileSettingsProvider<TSettings = unknown>
   async load({
     namespace,
     defaultVal,
-  }: LoadSettingsParams<TSettings>): Promise<TSettings | undefined> {
+  }: LoadSettingsParams<TSettings>): Promise<TSettings | null> {
     const { formatter } = this.opts;
     const filePath = this.getFilePath(namespace);
 
     // file doesn't exist
     if (existsSync(filePath) !== true) {
-      return defaultVal;
+      return defaultVal ?? null;
     }
 
     return formatter.deserialize(readFileSync(filePath, { encoding: 'utf-8' }));

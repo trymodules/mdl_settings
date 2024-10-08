@@ -7,7 +7,6 @@ import {
   DeleteParameterCommand,
 } from '@aws-sdk/client-ssm';
 import { Except, PartialDeep } from 'type-fest';
-
 import {
   LoadSettingsParams,
   SaveSettingsParams,
@@ -40,7 +39,7 @@ export interface AwsSSMSettingsProviderOptions {
 export class AwsSSMSettingsProvider<TSettings = unknown>
   implements SettingsProvider<TSettings>
 {
-  readonly NAME = Symbol('aws-ssm');
+  readonly NAME = Symbol('provider-aws-ssm');
 
   protected readonly ssmClient: SSMClient;
   protected readonly formatter: SettingsFormatter;
@@ -73,7 +72,7 @@ export class AwsSSMSettingsProvider<TSettings = unknown>
   async load({
     namespace,
     defaultVal,
-  }: LoadSettingsParams<TSettings>): Promise<TSettings | undefined> {
+  }: LoadSettingsParams<TSettings>): Promise<TSettings | null> {
     const output = await this.ssmClient.send(
       new GetParameterCommand({
         ...this.getParameterCommandOpts,
@@ -88,7 +87,7 @@ export class AwsSSMSettingsProvider<TSettings = unknown>
       typeof output.Parameter === 'undefined' ||
       typeof output.Parameter.Value === 'undefined'
     ) {
-      return defaultVal;
+      return defaultVal ?? null;
     }
 
     return this.formatter.deserialize(output.Parameter.Value);
