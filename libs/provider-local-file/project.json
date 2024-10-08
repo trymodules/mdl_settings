@@ -1,0 +1,21 @@
+{
+  "name": "libs/provider-local-file",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/provider-local-file/src",
+  "projectType": "library",
+  "tags": [
+    "provider"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/provider-local-file",
+        "main": "libs/provider-local-file/src/index.ts",
+        "tsConfig": "libs/provider-local-file/tsconfig.lib.json",
+        "assets": ["libs/provider-local-file/*.md"]
+      }
+    }
+  }
+}
