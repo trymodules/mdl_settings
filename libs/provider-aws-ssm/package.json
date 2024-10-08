@@ -7,7 +7,9 @@
   "peerDependencies": {
     "@aws-sdk/client-ssm": "^3.0.0",
     "@trymodules/settings": "^1.0.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
     "type-fest": "^4.0.0"
   }
 }

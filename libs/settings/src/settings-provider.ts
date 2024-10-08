@@ -11,7 +11,7 @@ export interface LoadSettingsParams<TSettings = unknown>
   /**
    * The default settings to use if none are found
    */
-  defaultVal?: TSettings;
+  defaultVal?: TSettings | null;
 }
 
 export interface SaveSettingsParams<TSettings = unknown>
@@ -19,7 +19,7 @@ export interface SaveSettingsParams<TSettings = unknown>
   /**
    * The settings to save
    */
-  settings: TSettings;
+  settings: TSettings | null;
 }
 
 export interface DeleteSettingsParams extends SharedSettingsParams {}
@@ -34,7 +34,7 @@ export interface SettingsProvider<TSettings = unknown> {
    * Load settings from the storage
    * @param params The parameters to load the settings
    */
-  load(params: LoadSettingsParams<TSettings>): Promise<TSettings | undefined>;
+  load(params: LoadSettingsParams<TSettings>): Promise<TSettings | null>;
 
   /**
    * Save settings to the storage

@@ -29,7 +29,7 @@ export type TypeormSettingsProviderOptions = {
 export class TypeormSettingsProvider<TSettings = unknown>
   implements SettingsProvider<TSettings>
 {
-  readonly NAME = Symbol('typeorm');
+  readonly NAME = Symbol('provider-typeorm');
 
   protected get repository() {
     return this.opts.dataSource.getRepository(SettingsEntity);
@@ -40,7 +40,7 @@ export class TypeormSettingsProvider<TSettings = unknown>
   async load({
     namespace,
     defaultVal,
-  }: LoadSettingsParams<TSettings>): Promise<TSettings | undefined> {
+  }: LoadSettingsParams<TSettings>): Promise<TSettings | null> {
     const { formatter } = this.opts;
 
     const settingsRecord = await this.repository.findOne({
@@ -50,7 +50,7 @@ export class TypeormSettingsProvider<TSettings = unknown>
 
     // no settings found, return default value (if provided)
     if (typeof settingsRecord === 'undefined' || settingsRecord === null) {
-      return defaultVal;
+      return defaultVal ?? null;
     }
 
     // deserialize the settings
