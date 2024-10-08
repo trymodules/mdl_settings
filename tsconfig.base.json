@@ -15,10 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "#libs/settings": ["libs/settings/src/index.ts"],
       "#libs/format-json": ["libs/format-json/src/index.ts"],
       "#libs/format-yaml": ["libs/format-yaml/src/index.ts"],
-      "#libs/provider-aws-ssm": ["libs/provider-aws-ssm/src/index.ts"]
+      "#libs/provider-aws-ssm": ["libs/provider-aws-ssm/src/index.ts"],
+      "#libs/settings": ["libs/settings/src/index.ts"],
+      "#libs/provider-local-file": ["libs/provider-local-file/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
